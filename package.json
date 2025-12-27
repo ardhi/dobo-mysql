@@ -1,0 +1,41 @@
+{
+  "name": "dobo-mysql",
+  "version": "2.2.0",
+  "description": "Mysql/Mariadb driver for Dobo",
+  "main": "index.js",
+  "scripts": {
+    "build-doc": "jsdoc -c .jsdoc.conf.json",
+    "test": "mocha"
+  },
+  "type": "module",
+  "bajo": {
+    "type": "plugin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardhi/dobo-mysql.git"
+  },
+  "keywords": [
+    "mysql",
+    "sql",
+    "dobo",
+    "db",
+    "driver",
+    "bajo",
+    "framework",
+    "modular"
+  ],
+  "author": "Ardhi Lukianto <ardhi@lukianto.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ardhi/dobo-mysql/issues"
+  },
+  "homepage": "https://github.com/ardhi/dobo-mysql#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "clean-jsdoc-theme": "^4.3.0",
+    "jsdoc-plugin-intersection": "^1.0.4"
+  }
+}
