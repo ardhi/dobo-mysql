@@ -1,7 +1,7 @@
 async function mysqlDriverFactory () {
-  const { KnexDriver } = this.app.doboKnex.baseClass
+  const { DoboKnexDriver } = this.app.baseClass
 
-  class MysqlDriver extends KnexDriver {
+  class DoboMysqlDriver extends DoboKnexDriver {
     constructor (plugin, options) {
       super(plugin)
       this.dialect = 'mysql'
@@ -17,7 +17,8 @@ async function mysqlDriverFactory () {
     }
   }
 
-  return MysqlDriver
+  this.app.baseClass.DoboMysqlDriver = DoboMysqlDriver
+  return DoboMysqlDriver
 }
 
 export default mysqlDriverFactory
