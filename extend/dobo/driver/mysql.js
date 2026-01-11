@@ -2,8 +2,8 @@ async function mysqlDriverFactory () {
   const { DoboKnexDriver } = this.app.baseClass
 
   class DoboMysqlDriver extends DoboKnexDriver {
-    constructor (plugin, options) {
-      super(plugin)
+    constructor (plugin, name, options) {
+      super(plugin, name, options)
       this.dialect = 'mysql'
       this.adapter = 'mysql'
       this.support.returning = false
