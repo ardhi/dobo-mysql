@@ -20,6 +20,27 @@ async function factory (pkgName) {
         }
       }
     }
+
+    sanitizeError = (err) => {
+      const { getModel } = this.app.dobo
+      const { last, intersection, without } = this.app.lib._
+      err.title = 'sqlError'
+      if (err.code === 'ER_DUP_ENTRY') {
+        const item = last(err.sqlMessage.split(' '))
+        if (item[0] === "'" && item[item.length - 1] === "'") {
+          const [model, ...args] = item.split('_')
+          const mdl = getModel(model)
+          if (mdl) {
+            const props = mdl.getNonVirtualProperties(true)
+            const fields = without(intersection(props, args), 'siteId')
+            err.details = fields.map(field => {
+              return { field, error: 'duplicate' }
+            })
+          }
+        }
+        err.message = err.sqlMessage
+      }
+    }
   }
   return DoboSqlite3
 }
