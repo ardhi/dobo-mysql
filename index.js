@@ -24,8 +24,8 @@ async function factory (pkgName) {
     sanitizeError = (err) => {
       const { getModel } = this.app.dobo
       const { last, intersection, without } = this.app.lib._
-      err.title = 'sqlError'
       if (err.code === 'ER_DUP_ENTRY') {
+        err.title = 'sqlError'
         const item = last(err.sqlMessage.split(' '))
         if (item[0] === "'" && item[item.length - 1] === "'") {
           const [model, ...args] = item.split('_')
