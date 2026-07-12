@@ -1,4 +1,5 @@
 {
   "sqlError": "SQL Error",
-  "duplicate": "Duplicate"
+  "duplicate": "Duplicate",
+  "noDefault": "No default value"
 }

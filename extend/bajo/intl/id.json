@@ -1,4 +1,5 @@
 {
   "sqlError": "Kesalahan SQL",
-  "duplicate": "Duplikasi"
+  "duplicate": "Duplikasi",
+  "noDefault": "Tidak ada nilai default"
 }

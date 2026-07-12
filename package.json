@@ -1,7 +1,7 @@
 {
   "name": "dobo-mysql",
-  "version": "2.4.0",
-  "description": "Mysql/Mariadb driver for Dobo",
+  "version": "2.5.0",
+  "description": "Mysql/Mariadb adapter for Dobo",
   "main": "index.js",
   "scripts": {
     "build-doc": "jsdoc -c .jsdoc.conf.json",
@@ -22,7 +22,7 @@
     "sql",
     "dobo",
     "db",
-    "driver",
+    "adapter",
     "bajo",
     "framework",
     "modular"
